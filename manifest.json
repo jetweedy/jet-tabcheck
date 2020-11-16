@@ -29,13 +29,15 @@
 }
 
 , "content_scripts": [
-	{
-		"matches": [
-			"http://*/*", "https://*/*"
-		]
-		, "js": ["content.js"]
-		, "run_at": "document_end"
+		{
+			"matches": [
+				"http://*/*", "https://*/*"
+			]
+			, "js": ["content.js"]
+			, "run_at": "document_end"
+		}
+	]
+	, "chrome_url_overrides": {
+	    "newtab": "blank.html"
 	}
-]
-
 }

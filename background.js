@@ -1,4 +1,4 @@
-
+	
 //// This all runs the first time the page is loaded:
 
 var DATA = {};
@@ -17,9 +17,12 @@ chrome.storage.sync.get([], function(data) {
 //// Listen for messages
 chrome.runtime.onMessage.addListener(
 	function(request, sender) {
+		if (typeof DATA.FocusCheckStatus == "undefined") { 
+			DATA.FocusCheckStatus = false;
+			chrome.storage.sync.set({"FocusCheckStatus":DATA.FocusCheckStatus}, function () { /**/ });
+		}
 		switch(request.action) {
             case "setZoomCheckActive":
-				if (typeof DATA.FocusCheckStatus == "undefined") { DATA.FocusCheckStatus = false; }
                 DATA.FocusCheckStatus = request.status;
                 chrome.storage.sync.set({"FocusCheckStatus":DATA.FocusCheckStatus}, function () { /**/ });
 				chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
@@ -29,7 +32,6 @@ chrome.runtime.onMessage.addListener(
                 break;
 			case "runOnTabFocus":
 				//// Increment the DATA.FocusCheckStatus variable (to demonstrate a persistent change)
-				if (typeof DATA.FocusCheckStatus == "undefined") { DATA.FocusCheckStatus = false; }
                 if (DATA.FocusCheckStatus) {
                     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
                         chrome.tabs.sendMessage(tabs[0].id, {action: "obscurePage"}, function(response) {});  
