@@ -4,7 +4,7 @@
 var DATA = {};
 //// Initialize storage DATA.FocusCheckStatus by getting/setting if necessary
 ////chrome.storage.sync.get(["Keys","to","fetch"], function(toPerformOnThisReturnedVar) {
-chrome.storage.sync.get([], function(data) {
+chrome.storage.sync.get(["FocusCheckStatus"], function(data) {
 	DATA = data;
 	if (typeof DATA.FocusCheckStatus == "undefined") { DATA.FocusCheckStatus = false; }
 	//// This line is necessary anywhere else that data is updated later
