@@ -39,6 +39,9 @@ chrome.runtime.onMessage.addListener(
 });
 
 //// Send a message from content to background
-//setTimeout(function() {
+setTimeout(function() {
     chrome.runtime.sendMessage({action: "runOnTabFocus"}, function(response) {});
-//}, 100);
+    window.addEventListener("focus", () => {
+        chrome.runtime.sendMessage({action: "runOnTabFocus"}, function(response) {});
+    });
+}, 100);
