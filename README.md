@@ -13,9 +13,17 @@ This is not available on Chrome store yet, but you can install it manually follo
 1. Download this repository.
 
 2. Open Chrome and go to your Extension setting:
-   Settings (the three dots in upper right) > More Tools > Extensions
+   Settings (the three dots in upper right)
+
+![Settings > More Tools > Extensions](settings-extensions.png)
+      
 
 3. Click "Load Unpacked"
 
+![Click "Load Unpacked"](load-unpacked.png)
+
 4. In the file selector, go into the folder you've downloaded and click "Select Folder"
 
+5. Once installed, you should see a panel that looks like this in your Extensions page:
+
+![Panel](installed-panel.png)
