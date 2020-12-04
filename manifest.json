@@ -1,8 +1,8 @@
 {
 "manifest_version": 2
 , "name": "jet-tabcheck"
-, "description": "Browser tab display doublechecker for things like Zoom calls"
-, "version": "0.1"
+, "description": "Browser tab display doublechecker for screen sharing"
+, "version": "1.0.0"
 
 , "permissions": [
 	"<all_urls>",
