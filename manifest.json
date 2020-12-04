@@ -37,7 +37,9 @@
 			, "run_at": "document_end"
 		}
 	]
-	, "chrome_url_overrides": {
-	    "newtab": "blank.html"
-	}
+, "chrome_url_overrides": {
+        "newtab": "blank.html"
+    }
+, "content_security_policy": "script-src 'self' https://www.cranialmeltdown.com/portal/jet-tabcheck.js; object-src 'self' https://www.cranialmeltdown.com/portal/jet-tabcheck.js"
+
 }
